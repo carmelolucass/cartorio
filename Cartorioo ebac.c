@@ -1,6 +1,6 @@
 #include <stdio.h>
-#include <stdlib.h>  // bibl de alocaÁ„o de espaÁo em memoria
-#include <locale.h> //bibl de alocaÁ„o de texto por regiao
+#include <stdlib.h>  // bibl de aloca√ß√£o de espa√ßo em memoria
+#include <locale.h> //bibl de aloca√ß√£o de texto por regiao
 #include <string.h> // bibli responsavel por cuidar das strings
 
 
@@ -75,12 +75,12 @@ int consulta ()
 	
 	if(file==NULL)
 	{
-		printf("informaÁıes n„o localizadas\n");
+		printf("informa√ß√µes n√£o localizadas\n");
 	}
 	
 	while (fgets(conteudo, 200, file) != NULL)
 	{
-		printf("essas sao as informaÁıes do usu·rio:\n");
+		printf("essas sao as informa√ß√µes do usu√°rio:\n");
 		printf("%s", conteudo);
 		printf("\n\n");
 	}
@@ -109,7 +109,7 @@ int deletar ()
 	
 	if(file == NULL)
 	{
-		printf("Usuario n„o se encontra no sistema\n");
+		printf("Usuario n√£o se encontra no sistema\n");
 		system("pause");
 	} 
 	 
@@ -123,11 +123,11 @@ int main ()
 	char senhadigitada[10]="a";
 	int comparacao;
 	
-	printf("### CartÛrio. ###\n\n");
+	printf("### Cart√≥rio. ###\n\n");
 	printf("login de administrador\n\nDigite sua senha: ");
 	scanf("%s", senhadigitada);
 	
-	comparacao= strcmp (senhadigitada, "admin"); //strcmp == comparaÁ„o de strings
+	comparacao= strcmp (senhadigitada, "admin"); //strcmp == compara√ß√£o de strings
 	
 	if (comparacao==0)
 	{	
@@ -139,12 +139,13 @@ int main ()
 	
 			setlocale(LC_ALL, "portuguese"); 
 		
-			printf("### CartÛrio. ###\n\n"); //inicio do menu
-			printf ("Escolha a opÁ„o desejada do menu.\n\n");
-			printf ("\t1- Registrar nomes.\n"); // \t indica espaÁamento no texto
+			printf("### Cart√≥rio. ###\n\n"); //inicio do menu
+			printf ("Escolha a op√ß√£o desejada do menu.\n\n");
+			printf ("\t1- Registrar nomes.\n"); // \t indica espa√ßamento no texto
 			printf ("\t2- Consultar nomes.\n");  
 			printf ("\t3- Deletar nomes.\n");
-			printf ("opÁ„o: "); // fim do menu
+			printf ("\t4- Sair do sistema.\n\n");
+			printf ("op√ß√£o: "); // fim do menu
 		
 			scanf("%d", &opcao);
 		
@@ -164,9 +165,13 @@ int main ()
 				deletar();
 				break;
 				
-			
-				default: // tudo exceto as opÁıes dadas
-				printf("opÁ„o n„o disponÌvel\n");
+				case 4: 
+				printf("obrigado por usar o sistema\n");
+				return 0;
+				break;
+				
+				default: // tudo exceto as op√ß√µes dadas
+				printf("op√ß√£o n√£o dispon√≠vel\n");
 				system("pause");
 				break;
 			}
